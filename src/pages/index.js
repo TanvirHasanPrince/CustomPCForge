@@ -1,12 +1,15 @@
 import RootLayout from '@/components/Layouts/RootLayout';
 import Banner from '@/components/UI/Banner';
+import Head from 'next/head';
 import React from 'react';
 
 const HomePage = () => {
   return (
     <div>
-      <h1>This is Home Page of the website</h1>
-  <Banner></Banner>
+      <Head>
+        <title>CustomPCForge - Home</title>
+      </Head>
+      <Banner></Banner>
     </div>
   );
 };
