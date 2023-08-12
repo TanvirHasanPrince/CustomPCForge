@@ -1,25 +1,40 @@
 import React from 'react';
+import Lottie from "lottie-react";
+import bannerAnimation from '../../assets/banner/animation_ll8l2on9.json'
+import Typewriter from "typewriter-effect";
 
 const Banner = () => {
  return (
-   <div
-     className="hero min-h-screen"
-     style={{
-       backgroundImage:
-         "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-     }}
-   >
-     <div className="hero-overlay bg-opacity-60"></div>
-     <div className="hero-content text-center text-neutral-content">
-       <div className="max-w-md">
-         <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-         <p className="mb-5">
-           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-           a id nisi.
-         </p>
-         <button className="btn btn-primary">Get Started</button>
-       </div>
+   <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-10 py-20">
+     <div className="bg-base rounded-xl flex items-center justify-center">
+       <Lottie animationData={bannerAnimation} loop={true} />
+     </div>
+     <div className="font-courier ">
+       <h1 className="lg:text-7xl md:text-5xl text-2xl text-center ">
+         Empowering Your Digital Vision.
+         <span className="text-accent text-3xl">
+
+           <Typewriter
+             options={{
+               strings: ["One Component at a Time!"],
+               autoStart: true,
+               loop: true,
+             }}
+           />
+         </span>
+       </h1>
+       <br></br>
+       <p className=" text-sm lg:text-lg text-center">
+         Welcome to CustomPCForge, your ultimate destination for building
+         the PC of your dreams! Explore a wide range of high-quality PC parts
+         and components, carefully curated to empower your creativity and
+         performance needs. Our user-friendly PC Builder tool lets you craft a
+         custom rig with ease, while our expert guides and community insights
+         ensure you&apos;re making informed decisions every step of the way.
+         Unleash your imagination and assemble the perfect PC that suits your
+         style and ambitions. Start building today and elevate your computing
+         experience!
+       </p>
      </div>
    </div>
  );

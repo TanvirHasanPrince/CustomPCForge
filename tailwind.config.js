@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        courier: ["Courier New", "monospace"],
+      },
       backgroundImage: {
         "gradient-primary": "linear-gradient(to right, #570df8, #1dcdbc)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

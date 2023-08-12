@@ -2,9 +2,10 @@ import Head from 'next/head';
 import React from 'react';
 
 const Navbar = () => {
+
+
  return (
    <>
-
      <div className="navbar bg-neutral text-neutral-content">
        <div className="navbar-start">
          <div className="dropdown">
@@ -52,28 +53,49 @@ const Navbar = () => {
        <div className="navbar-center hidden lg:flex">
          <ul className="menu menu-horizontal px-1">
            <li>
-             <a>Item 1</a>
+             <a>CPU / Processor</a>
+           </li>
+           <li>
+             <a>Motherboard</a>
+           </li>
+           <li>
+             <a>RAM</a>
+           </li>
+           <li>
+             <a>Power Supply Unit</a>
+           </li>
+           <li>
+             <a>Storage Device</a>
+           </li>
+           <li>
+             <a>Monitor</a>
            </li>
            <li tabIndex={0}>
              <details>
-               <summary>Parent</summary>
+               <summary>Others</summary>
                <ul className="p-2">
                  <li>
-                   <a>Submenu 1</a>
+                   <a>Mouse</a>
                  </li>
                  <li>
-                   <a>Submenu 2</a>
+                   <a>Keyboard</a>
+                 </li>
+                 <li>
+                   <a>Spearks</a>
+                 </li>
+                 <li>
+                   <a>UPS</a>
+                 </li>
+                 <li>
+                   <a>Router</a>
                  </li>
                </ul>
              </details>
            </li>
-           <li>
-             <a>Item 3</a>
-           </li>
          </ul>
        </div>
        <div className="navbar-end">
-         <a className="btn">Button</a>
+         <a className="btn btn-accent">PC Builder</a>
        </div>
      </div>
    </>
