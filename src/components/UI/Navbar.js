@@ -30,21 +30,44 @@ const Navbar = () => {
              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
            >
              <li>
-               <a>Item 1</a>
+               <a>CPU / Processor</a>
              </li>
              <li>
-               <a>Parent</a>
-               <ul className="p-2">
-                 <li>
-                   <a>Submenu 1</a>
-                 </li>
-                 <li>
-                   <a>Submenu 2</a>
-                 </li>
-               </ul>
+               <a>Motherboard</a>
              </li>
              <li>
-               <a>Item 3</a>
+               <a>RAM</a>
+             </li>
+             <li>
+               <a>Power Supply Unit</a>
+             </li>
+             <li>
+               <a>Storage Device</a>
+             </li>
+             <li>
+               <a>Monitor</a>
+             </li>
+             <li tabIndex={0}>
+               <details>
+                 <summary>Others</summary>
+                 <ul className="p-2">
+                   <li>
+                     <a>Mouse</a>
+                   </li>
+                   <li>
+                     <a>Keyboard</a>
+                   </li>
+                   <li>
+                     <a>Spearks</a>
+                   </li>
+                   <li>
+                     <a>UPS</a>
+                   </li>
+                   <li>
+                     <a>Router</a>
+                   </li>
+                 </ul>
+               </details>
              </li>
            </ul>
          </div>
