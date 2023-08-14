@@ -1,6 +1,7 @@
 import FeaturedProductsCard from '@/components/Cards/FeaturedProductsCard';
 import RootLayout from '@/components/Layouts/RootLayout';
 import Banner from '@/components/UI/Banner';
+import Categories from '@/components/UI/Categories';
 import FeaturedProducts from '@/components/UI/FeaturedProducts';
 import Head from 'next/head';
 import React from 'react';
@@ -13,6 +14,7 @@ const HomePage = ({ randomProducts }) => {
       </Head>
       <Banner></Banner>
       <FeaturedProducts randomProducts={randomProducts}></FeaturedProducts>
+      <Categories></Categories>
     </div>
   );
 };
