@@ -1,36 +1,46 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-const FeaturedProductsCard = () => {
- return (
-   <Link
-     href=""
-     className="border  hover:border-accent p-4 rounded-md transform hover:scale-105 transition duration-300"
-   >
-     <div className="p-5 flex flex-col ">
-       <div className="">
-         <Image
-           src="https://www.cloud.ryanscomputers.com/cdn/products/medium/apple-macbook-air-late-2020-apple-m1-chip-8gb-11607861922.webp"
-           alt=""
-           width={800}
-           height={600}
-           layout="responsive"
-           className="rounded-lg transform hover:scale-125 transition duration-300"
-         />
-       </div>
-       <div className="text-center space-y-1 mt-5">
-         <p>
-           Product Name: Acer KA222Q H 21.5 100Hz AMD FreeSync Full HD Monitor
-         </p>
-         <p>Category: Monitor</p>
-         <p>Price: 8,799</p>
-         <p>Status: In Stock</p>
-         <p>Rating: 4.5</p>
-       </div>
-     </div>
-   </Link>
- );
+const FeaturedProductsCard = ({ product }) => {
+  const { image, productName, category, status, individualRating } = product;
+
+  return (
+    <Link
+      href="" // Replace with the actual product URL
+      className="border hover:border-accent p-4 rounded-md transform hover:scale-105 transition duration-300"
+    >
+      <div className="flex flex-col">
+        <div>
+          <Image
+            src={image}
+            alt=""
+            width={800}
+            height={600}
+            layout="responsive"
+            className="rounded-lg transform hover:scale-110 transition duration-300"
+          />
+        </div>
+        <div className="p-5 text-center space-y-1 mt-1">
+          <p>Product Name: {productName}</p>
+          <p>Category: {category}</p>
+          <p>Price: 8,799</p> {/* Replace with actual product price */}
+          <p>Status: {status}</p>
+          <p>Rating: {individualRating}</p>
+        </div>
+      </div>
+    </Link>
+  );
 };
+
+// const FeaturedProductsList = ({ allProducts }) => {
+//   return (
+//     <div className="grid grid-cols-5 gap-4">
+//       {allProducts.map((product, index) => (
+//         <FeaturedProductsCard key={index} product={product} />
+//       ))}
+//     </div>
+//   );
+// };
 
 export default FeaturedProductsCard;
