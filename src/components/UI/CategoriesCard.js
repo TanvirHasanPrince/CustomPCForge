@@ -4,15 +4,14 @@ import Link from 'next/link';
 import React from 'react';
 
 const CategoriesCard = ({ category }) => {
- const {image, title } = category;
+ const {link, image, title } = category;
  console.log(image);
 
 
   return (
     <div>
       <Link
-        href="" // Replace with the actual product URL
-        // className="border hover:border-accent p-4 rounded-md transform hover:scale-105 transition duration-300"
+        href={link} 
       >
         <div className="flex flex-col mt-5">
           <div>

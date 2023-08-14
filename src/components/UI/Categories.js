@@ -14,36 +14,43 @@ const Categories = () => {
      id: 1,
      image: cpuImg,
      title: "CPU/processor",
+     link: "/processors",
    },
    {
      id: 2,
      image: motherBoardImg,
      title: "Motherboard",
+     link: "/processors",
    },
    {
      id: 3,
      image: ramImg,
      title: "RAM",
+     link: "/processors",
    },
    {
      id: 4,
      image: psuImg,
      title: "Power Supply Unit",
+     link: "/processors",
    },
    {
      id: 5,
      image: storageImg,
      title: "Storage Device",
+     link: "/processors",
    },
    {
      id: 6,
      image: monitorImg,
      title: "Monitor",
+     link: "/processors",
    },
    {
      id: 7,
      image: keyboardImg,
      title: "Others",
+     link: "/processors",
    },
  ];
  return (
