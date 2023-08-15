@@ -2,33 +2,30 @@ import DetailsProductCard from "@/components/Cards/DetailsProductCard";
 import RootLayout from "@/components/Layouts/RootLayout";
 import React from "react";
 
-const SingleProcessorsPage = ({ singleProcessor }) => {
-
-
+const SingleMotherBoardPage = ({ singleMotherboard }) => {
   return (
     <div>
-
-      <DetailsProductCard product={singleProcessor}></DetailsProductCard>
+      <DetailsProductCard product={singleMotherboard}></DetailsProductCard>
     </div>
   );
 };
 
-export default SingleProcessorsPage;
+export default SingleMotherBoardPage;
 
-SingleProcessorsPage.getLayout = function getLayout(page) {
+SingleMotherBoardPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
 export const getServerSideProps = async (context) => {
-
   const { params } = context;
-
-  const res = await fetch(`http://localhost:5000/processors/${params.processorsId}`);
+  const res = await fetch(
+    `http://localhost:5000/motherboards/${params.motherboardsId}`
+  );
   const data = await res.json();
 
   return {
     props: {
-      singleProcessor: data.data,
+      singleMotherboard: data.data,
     },
   };
 };

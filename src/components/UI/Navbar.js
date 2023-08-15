@@ -80,7 +80,7 @@ const Navbar = () => {
               <Link href="/processors">CPU / Processor</Link>
             </li>
             <li>
-              <a>Motherboard</a>
+              <Link href="/motherboards">Motherboard</Link>
             </li>
             <li>
               <a>RAM</a>

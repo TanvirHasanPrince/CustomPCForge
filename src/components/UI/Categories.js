@@ -20,7 +20,7 @@ const Categories = () => {
      id: 2,
      image: motherBoardImg,
      title: "Motherboard",
-     link: "/processors",
+     link: "/motherboards",
    },
    {
      id: 3,
