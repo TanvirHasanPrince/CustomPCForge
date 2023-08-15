@@ -26,7 +26,7 @@ const Categories = () => {
      id: 3,
      image: ramImg,
      title: "RAM",
-     link: "/processors",
+     link: "/ram",
    },
    {
      id: 4,

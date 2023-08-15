@@ -83,7 +83,7 @@ const Navbar = () => {
               <Link href="/motherboards">Motherboard</Link>
             </li>
             <li>
-              <a>RAM</a>
+              <Link href='/ram'>RAM</Link>
             </li>
             <li>
               <a>Power Supply Unit</a>
