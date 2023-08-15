@@ -34,16 +34,16 @@ export const getStaticProps = async () => {
     console.log("Fetched data:", data); // Log fetched data to check its structure
 
     // Get the first 10 products
-    const randomProducts = data.data.slice(0, 10);
+    const allProducts = data.data
 
     // Shuffle the random products array to get a random order
-    const shuffledRandomProducts = randomProducts.sort(
-      () => Math.random() - 0.5
-    );
+    const shuffledRandomProducts = allProducts.sort(() => Math.random() - 0.5);
+
+
 
     return {
       props: {
-        randomProducts: shuffledRandomProducts,
+        randomProducts: shuffledRandomProducts.slice(0,10),
       },
     };
   } catch (error) {

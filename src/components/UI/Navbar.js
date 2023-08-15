@@ -89,7 +89,7 @@ const Navbar = () => {
               <Link href='/psu'>Power Supply Unit</Link>
             </li>
             <li>
-              <a>Storage Device</a>
+              <Link href='/hdd'>Storage Device</Link>
             </li>
             <li>
               <a>Monitor</a>

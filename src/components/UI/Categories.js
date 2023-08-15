@@ -38,7 +38,7 @@ const Categories = () => {
      id: 5,
      image: storageImg,
      title: "Storage Device",
-     link: "/processors",
+     link: "/hdd",
    },
    {
      id: 6,
