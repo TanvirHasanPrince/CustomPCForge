@@ -5,7 +5,7 @@ import React from "react";
 const FeaturedProductsCard = ({ product }) => {
   const { _id,  image, productName, category, status, individualRating } =
     product;
-    console.log(_id);
+
   return (
     <Link
       href={`/${category.toLowerCase()}/${_id}`}

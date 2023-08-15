@@ -1,12 +1,14 @@
+import DetailsProductCard from "@/components/Cards/DetailsProductCard";
 import RootLayout from "@/components/Layouts/RootLayout";
 import React from "react";
 
 const SingleProcessorsPage = ({ singleProcessor }) => {
-  console.log(singleProcessor);
+
 
   return (
     <div>
-      <h1>{singleProcessor.price}</h1>
+
+      <DetailsProductCard product={singleProcessor}></DetailsProductCard>
     </div>
   );
 };
