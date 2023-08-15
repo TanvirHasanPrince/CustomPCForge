@@ -32,7 +32,7 @@ const Categories = () => {
      id: 4,
      image: psuImg,
      title: "Power Supply Unit",
-     link: "/processors",
+     link: "/psu",
    },
    {
      id: 5,

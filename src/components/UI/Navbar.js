@@ -86,7 +86,7 @@ const Navbar = () => {
               <Link href='/ram'>RAM</Link>
             </li>
             <li>
-              <a>Power Supply Unit</a>
+              <Link href='/psu'>Power Supply Unit</Link>
             </li>
             <li>
               <a>Storage Device</a>
