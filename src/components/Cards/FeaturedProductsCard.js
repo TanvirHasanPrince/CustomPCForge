@@ -3,11 +3,12 @@ import Link from "next/link";
 import React from "react";
 
 const FeaturedProductsCard = ({ product }) => {
-  const { image, productName, category, status, individualRating } = product;
-
+  const { _id,  image, productName, category, status, individualRating } =
+    product;
+    console.log(_id);
   return (
     <Link
-      href="" // Replace with the actual product URL
+      href={`/${category.toLowerCase()}/${_id}`}
       className="border hover:border-accent p-4 rounded-md transform hover:scale-105 transition duration-300"
     >
       <div className="flex flex-col">

@@ -27,7 +27,10 @@ ProcessorHomePage.getLayout = function getLayout(page) {
 
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:5000/products/processors");
+
+  const res = await fetch(
+    `http://localhost:5000/products/processors`
+  );
   const data = await res.json();
 
   return {
