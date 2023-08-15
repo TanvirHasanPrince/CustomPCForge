@@ -92,7 +92,7 @@ const Navbar = () => {
               <Link href='/hdd'>Storage Device</Link>
             </li>
             <li>
-              <a>Monitor</a>
+              <Link href='/monitor'>Monitor</Link>
             </li>
             <li tabIndex={0}>
               <details>

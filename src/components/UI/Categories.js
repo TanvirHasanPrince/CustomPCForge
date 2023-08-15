@@ -44,7 +44,7 @@ const Categories = () => {
      id: 6,
      image: monitorImg,
      title: "Monitor",
-     link: "/processors",
+     link: "/monitor",
    },
    {
      id: 7,
