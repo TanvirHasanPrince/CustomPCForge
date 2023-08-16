@@ -32,19 +32,19 @@ const Navbar = () => {
                 <Link href="/processors">CPU / Processor</Link>
               </li>
               <li>
-                <a>Motherboard</a>
+                <Link href="/motherboards">Motherboard</Link>
               </li>
               <li>
-                <a>RAM</a>
+                <Link href="/ram">RAM</Link>
               </li>
               <li>
-                <a>Power Supply Unit</a>
+                <Link href="/psu">Power Supply Unit</Link>
               </li>
               <li>
-                <a>Storage Device</a>
+                <Link href="/hdd">Storage Device</Link>
               </li>
               <li>
-                <a>Monitor</a>
+                <Link href="/monitor">Monitor</Link>
               </li>
               <li tabIndex={0}>
                 <details>
@@ -83,16 +83,16 @@ const Navbar = () => {
               <Link href="/motherboards">Motherboard</Link>
             </li>
             <li>
-              <Link href='/ram'>RAM</Link>
+              <Link href="/ram">RAM</Link>
             </li>
             <li>
-              <Link href='/psu'>Power Supply Unit</Link>
+              <Link href="/psu">Power Supply Unit</Link>
             </li>
             <li>
-              <Link href='/hdd'>Storage Device</Link>
+              <Link href="/hdd">Storage Device</Link>
             </li>
             <li>
-              <Link href='/monitor'>Monitor</Link>
+              <Link href="/monitor">Monitor</Link>
             </li>
             <li tabIndex={0}>
               <details>
@@ -104,7 +104,7 @@ const Navbar = () => {
                   <li>
                     <a>Keyboard</a>
                   </li>
-          
+
                   <li>
                     <a>Graphics Card</a>
                   </li>
@@ -114,7 +114,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link href='/pcBuilder' className="btn btn-accent">PC Builder</Link>
+          <Link href="/pcBuilder" className="btn btn-accent">
+            PC Builder
+          </Link>
         </div>
       </div>
     </>

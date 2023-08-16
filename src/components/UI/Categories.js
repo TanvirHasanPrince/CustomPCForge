@@ -54,17 +54,23 @@ const Categories = () => {
    },
  ];
  return (
-   <div className="mt-5">
+   <div className="my-10 ">
      <h1 className="text-center font-courier text-2xl text-accent">
        Featured Category
      </h1>
      <p className="text-center font-courier">
        Get Your Desired Product from Featured Category!
      </p>
-     <div className='flex space-x-10'>
-       {productCategories.map((category) => (
-         <CategoriesCard key={category.id} category={category}></CategoriesCard>
-       ))}
+     <div className="flex  items-center justify-center">
+       {" "}
+       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 space-x-10">
+         {productCategories.map((category) => (
+           <CategoriesCard
+             key={category.id}
+             category={category}
+           ></CategoriesCard>
+         ))}
+       </div>
      </div>
    </div>
  );
