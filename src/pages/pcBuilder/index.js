@@ -17,6 +17,7 @@ const PcBuilderHomePage = () => {
   const selectedProcessor = useSelector((state) => state.build.processors);
   const selectedMotherboards = useSelector((state) => state.build.motherboards);
   const selectedRAM = useSelector((state) => state.build.ram);
+  const selectedPSU = useSelector((state) => state.build.psu);
 
  
 
@@ -78,16 +79,28 @@ const PcBuilderHomePage = () => {
                 {selectedRAM.length > 0 ? (
                   <p>{selectedRAM[0].productName}</p>
                 ) : (
-                  <Link
-                    className="btn btn-accent"
-                    href="/pcBuilder/builderRam"
-                  >
+                  <Link className="btn btn-accent" href="/pcBuilder/builderRam">
                     Select
                   </Link>
                 )}
               </td>
               <td className="border p-5">
                 {selectedRAM.length > 0 ? selectedRAM[0].price : 0}
+              </td>
+            </tr>
+            <tr>
+              <td className="border p-5">Power Supply Unit</td>
+              <td className="border p-5">
+                {selectedPSU.length > 0 ? (
+                  <p>{selectedPSU[0].productName}</p>
+                ) : (
+                  <Link className="btn btn-accent" href="/pcBuilder/builderPsu">
+                    Select
+                  </Link>
+                )}
+              </td>
+              <td className="border p-5">
+                {selectedPSU.length > 0 ? selectedPSU[0].price : 0}
               </td>
             </tr>
           </tbody>

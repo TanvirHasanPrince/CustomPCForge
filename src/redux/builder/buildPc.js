@@ -7,7 +7,9 @@ const initialState = {
   motherboards: [],
   motherboardPrice: 0,
   ram:[],
-  ramPrice:0
+  ramPrice:0,
+  psu:[],
+  psuPrice: 0,
 };
 
 const buildPcSlice = createSlice({
@@ -26,6 +28,9 @@ const buildPcSlice = createSlice({
       } else if (productCategory === "ram") {
         state.ram.push({ ...productData });
         state.ramPrice = state.ramPrice + productData.price;
+      } else if (productCategory === "psu") {
+        state.psu.push({ ...productData });
+        state.psuPrice = state.psuPrice + productData.price;
       }
     },
   },
