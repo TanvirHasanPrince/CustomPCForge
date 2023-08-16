@@ -50,7 +50,7 @@ const Categories = () => {
      id: 7,
      image: keyboardImg,
      title: "Others",
-     link: "/processors",
+     link: "/others",
    },
  ];
  return (

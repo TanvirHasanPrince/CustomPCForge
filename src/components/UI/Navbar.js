@@ -104,14 +104,9 @@ const Navbar = () => {
                   <li>
                     <a>Keyboard</a>
                   </li>
+          
                   <li>
-                    <a>Spearks</a>
-                  </li>
-                  <li>
-                    <a>UPS</a>
-                  </li>
-                  <li>
-                    <a>Router</a>
+                    <a>Graphics Card</a>
                   </li>
                 </ul>
               </details>
