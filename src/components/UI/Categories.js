@@ -9,7 +9,7 @@ import keyboardImg from '../../assets/categories_icon/keyboard.png'
 import CategoriesCard from './CategoriesCard';
 
 const Categories = () => {
- const productCategories = [
+  const productCategories = [
    {
      id: 1,
      image: cpuImg,
