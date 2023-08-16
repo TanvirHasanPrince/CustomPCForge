@@ -1,5 +1,9 @@
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
+import Image from "next/image";
+import Link from "next/link";
+import RootLayout from "@/components/Layouts/RootLayout";
+
 import cpuImg from "../../assets/categories_icon/cpu.png";
 import motherBoardImg from "../../assets/categories_icon/motherboard.png";
 import ramImg from "../../assets/categories_icon/ram-memory.png";
@@ -7,30 +11,25 @@ import psuImg from "../../assets/categories_icon/power-supply.png";
 import storageImg from "../../assets/categories_icon/hdd.png";
 import monitorImg from "../../assets/categories_icon/monitor.png";
 import keyboardImg from "../../assets/categories_icon/keyboard.png";
-import Link from 'next/link';
-import { useSelector } from 'react-redux';
-import Image from 'next/image';
 
 const PcBuilderHomePage = () => {
   // Get the selected components from the Redux store
-  const selectedComponents = useSelector(state => state.build.products);
+  const selectedProcessor = useSelector((state) => state.build.processors);
+  const selectedMotherboards = useSelector((state) => state.build.motherboards);
 
-
-  console.log(selectedComponents);
-
-
+  console.log(selectedProcessor);
   const productCategories = [
     {
       id: 1,
       image: cpuImg,
-      title: "CPU/processor",
+      title: "Processors",
       link: "/pcBuilder/builderProcessors",
     },
     {
       id: 2,
       image: motherBoardImg,
       title: "Motherboard",
-      link: "/motherboards",
+      link: "/pcBuilder/builderMotherboards",
     },
     {
       id: 3,
@@ -41,13 +40,13 @@ const PcBuilderHomePage = () => {
     {
       id: 4,
       image: psuImg,
-      title: "Power Supply Unit",
+      title: "PSU",
       link: "/psu",
     },
     {
       id: 5,
       image: storageImg,
-      title: "Storage Device",
+      title: "HDD",
       link: "/hdd",
     },
     {
@@ -64,42 +63,58 @@ const PcBuilderHomePage = () => {
     },
   ];
 
- return (
-   <div>
-     <div className="flex items-center justify-center py-10 my-5">
-       <table class="table-auto border-collpase ">
-         <thead>
-           <tr className="border">
-             <th className="border">Category</th>
-             <th className="border">Selected Component</th>
-           </tr>
-         </thead>
-         <tbody className="text-center">
-           {productCategories.map((category, i) => (
-             <tr key={i}>
-               <td className="border p-5">{category.title}</td>
-               <td className="border p-5">
-                 {selectedComponents.map((component, i) => (
-                   <Image width={200} height={200} src={component.image} key={i} alt='d'>
-                     
-                   </Image>
-                 ))}
-                 <Link className="btn btn-accent" href={category.link}>
-                   Select
-                 </Link>
-               </td>
-             </tr>
-           ))}
-         </tbody>
-       </table>
-     </div>
-   </div>
- );
+  return (
+    <div>
+      <div className="flex items-center justify-center py-10 my-5">
+        <table className="table-auto border-collapse">
+          <thead>
+            <tr className="border">
+              <th className="border">Category</th>
+              <th className="border">Selected Component</th>
+              <th className="border">Cost</th>
+            </tr>
+          </thead>
+          <tbody className="text-center">
+            <tr>
+              <td className="border p-5">CPU/Processors</td>
+              <td className="border p-5">
+                {selectedProcessor.length > 0 ? (
+                  <p>{selectedProcessor[0].productName}</p>
+                ) : (
+                  <Link
+                    className="btn btn-accent"
+                    href="/pcBuilder/builderProcessors"
+                  >
+                    Select
+                  </Link>
+                )}
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border p-5">Motherboards</td>
+              <td className="border p-5">
+                {selectedMotherboards.length > 0 ? (
+                  <p>{selectedMotherboards[0].productName}</p>
+                ) : (
+                  <Link
+                    className="btn btn-accent"
+                    href="/pcBuilder/builderMotherboards"
+                  >
+                    Select
+                  </Link>
+                )}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
-
-export default PcBuilderHomePage;
-
 
 PcBuilderHomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
+
+export default PcBuilderHomePage;

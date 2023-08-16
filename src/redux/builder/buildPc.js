@@ -2,7 +2,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: [],
+  processors: [],
+  motherboards: [],
   total: 0,
 };
 
@@ -11,7 +12,13 @@ const buildPcSlice = createSlice({
   initialState,
   reducers: {
     addToBuilder: (state, action) => {
-      state.products.push({ ...action.payload });
+      const  productData  = action.payload;
+      const productCategory = productData.category.toLowerCase();
+      if (productCategory === "processors") {
+        state.processors.push({ ...productData });
+      } else if (productCategory === "motherboards") {
+        state.motherboards.push({ ...productData });
+      }
     },
   },
 });
