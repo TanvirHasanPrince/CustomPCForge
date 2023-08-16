@@ -8,8 +8,16 @@ import storageImg from "../../assets/categories_icon/hdd.png";
 import monitorImg from "../../assets/categories_icon/monitor.png";
 import keyboardImg from "../../assets/categories_icon/keyboard.png";
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 const PcBuilderHomePage = () => {
+  // Get the selected components from the Redux store
+  const selectedComponents = useSelector(state => state.build.products);
+
+
+  console.log(selectedComponents);
+
 
   const productCategories = [
     {
@@ -70,7 +78,16 @@ const PcBuilderHomePage = () => {
            {productCategories.map((category, i) => (
              <tr key={i}>
                <td className="border p-5">{category.title}</td>
-               <td className="border p-5"> <Link className='btn btn-accent' href={category.link}>Select</Link> </td>
+               <td className="border p-5">
+                 {selectedComponents.map((component, i) => (
+                   <Image width={200} height={200} src={component.image} key={i} alt='d'>
+                     
+                   </Image>
+                 ))}
+                 <Link className="btn btn-accent" href={category.link}>
+                   Select
+                 </Link>
+               </td>
              </tr>
            ))}
          </tbody>

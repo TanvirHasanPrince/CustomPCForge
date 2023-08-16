@@ -1,8 +1,23 @@
+import { addToBuilder } from "@/redux/builder/buildPc";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
+
+
+
 
 const BuilderProductCard = ({ product }) => {
   const { image, productName, category, status, individualRating } = product;
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+
+    const handleAddToBuilder = () => {
+      dispatch(addToBuilder(product)); // Dispatch the action with the selected product
+       router.push("/pcBuilder");
+    };
 
   return (
     <div className="border hover:border-accent p-4 rounded-md transform hover:scale-105 transition duration-300 relative">
@@ -24,7 +39,9 @@ const BuilderProductCard = ({ product }) => {
           <p>Status: {status}</p>
           <p>Rating: {individualRating}</p>
         </div>
-        <button className="btn btn-accent mb-4">Add To Builder</button>
+        <button onClick={handleAddToBuilder} className="btn btn-accent mb-4">
+          Add To Builder
+        </button>
       </div>
     </div>
   );

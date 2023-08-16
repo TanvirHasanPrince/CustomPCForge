@@ -1,8 +1,10 @@
+import store from "@/redux/store";
 import "@/styles/globals.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { Provider } from "react-redux"; // Import the Redux provider
+
 
 export default function App({ Component, pageProps }) {
-
   const getLayout = Component.getLayout || ((page) => page);
 
   const wrappedComponent = (
@@ -20,5 +22,8 @@ export default function App({ Component, pageProps }) {
     </AnimatePresence>
   );
 
-  return getLayout(wrappedComponent);
+  // Wrap the wrappedComponent with the Redux Provider
+  const appWithRedux = <Provider store={store}>{wrappedComponent}</Provider>;
+
+  return getLayout(appWithRedux);
 }
