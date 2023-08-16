@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import Link from "next/link";
 import RootLayout from "@/components/Layouts/RootLayout";
+import toast, { Toaster } from "react-hot-toast";
 
-import cpuImg from "../../assets/categories_icon/cpu.png";
-import motherBoardImg from "../../assets/categories_icon/motherboard.png";
-import ramImg from "../../assets/categories_icon/ram-memory.png";
-import psuImg from "../../assets/categories_icon/power-supply.png";
-import storageImg from "../../assets/categories_icon/hdd.png";
-import monitorImg from "../../assets/categories_icon/monitor.png";
-import keyboardImg from "../../assets/categories_icon/keyboard.png";
 
 const PcBuilderHomePage = () => {
   // Get the selected components from the Redux store
@@ -21,10 +15,26 @@ const PcBuilderHomePage = () => {
   const selectedHdd = useSelector((state) => state.build.hdd);
   const selectedMonitor = useSelector((state) => state.build.monitor);
 
- 
+  const selectedComponents = [
+    selectedProcessor,
+    selectedMotherboards,
+    selectedRAM,
+    selectedPSU,
+    selectedHdd,
+    selectedMonitor,
+  ];
+
+  const totalRequiredComponents = selectedComponents.length;
+
+  const selectedCount = selectedComponents.filter(
+    (component) => component.length > 0
+  ).length;
+
+  const notify = () => toast.success("Congratulations! Your Build is Complete");
+
 
   return (
-    <div>
+    <div className="text-center">
       <div className="flex items-center justify-center py-10 my-5">
         <table className="table-auto border-collapse">
           <thead>
@@ -143,6 +153,12 @@ const PcBuilderHomePage = () => {
           </tbody>
         </table>
       </div>
+      {selectedCount === totalRequiredComponents && (
+        <button className="btn btn-primary" onClick={notify}>
+          Complete Build
+        </button>
+      )}
+      <Toaster />
     </div>
   );
 };
