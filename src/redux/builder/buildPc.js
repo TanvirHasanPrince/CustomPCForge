@@ -10,6 +10,8 @@ const initialState = {
   ramPrice:0,
   psu:[],
   psuPrice: 0,
+  hdd:[],
+  hddPrice: 0,
 };
 
 const buildPcSlice = createSlice({
@@ -31,6 +33,9 @@ const buildPcSlice = createSlice({
       } else if (productCategory === "psu") {
         state.psu.push({ ...productData });
         state.psuPrice = state.psuPrice + productData.price;
+      } else if (productCategory === "hdd") {
+        state.hdd.push({ ...productData });
+        state.hddPrice = state.hddPrice + productData.price;
       }
     },
   },
