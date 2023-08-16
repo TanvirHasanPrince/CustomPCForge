@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const FeaturedProductsCard = ({ product }) => {
-  const { _id,  image, productName, category, status, individualRating } =
+  const { _id,  image, productName, category, status, individualRating, price } =
     product;
 
   return (
@@ -25,7 +25,7 @@ const FeaturedProductsCard = ({ product }) => {
         <div className="p-5 text-center space-y-1 mt-1">
           <p>Product Name: {productName}</p>
           <p>Category: {category}</p>
-          <p>Price: 8,799</p> {/* Replace with actual product price */}
+          <p>Price: {price}</p> {/* Replace with actual product price */}
           <p>Status: {status}</p>
           <p>Rating: {individualRating}</p>
         </div>

@@ -16,52 +16,9 @@ const PcBuilderHomePage = () => {
   // Get the selected components from the Redux store
   const selectedProcessor = useSelector((state) => state.build.processors);
   const selectedMotherboards = useSelector((state) => state.build.motherboards);
+  const selectedRAM = useSelector((state) => state.build.ram);
 
-  console.log(selectedProcessor);
-  const productCategories = [
-    {
-      id: 1,
-      image: cpuImg,
-      title: "Processors",
-      link: "/pcBuilder/builderProcessors",
-    },
-    {
-      id: 2,
-      image: motherBoardImg,
-      title: "Motherboard",
-      link: "/pcBuilder/builderMotherboards",
-    },
-    {
-      id: 3,
-      image: ramImg,
-      title: "RAM",
-      link: "/ram",
-    },
-    {
-      id: 4,
-      image: psuImg,
-      title: "PSU",
-      link: "/psu",
-    },
-    {
-      id: 5,
-      image: storageImg,
-      title: "HDD",
-      link: "/hdd",
-    },
-    {
-      id: 6,
-      image: monitorImg,
-      title: "Monitor",
-      link: "/monitor",
-    },
-    {
-      id: 7,
-      image: keyboardImg,
-      title: "Others",
-      link: "/others",
-    },
-  ];
+ 
 
   return (
     <div>
@@ -89,6 +46,9 @@ const PcBuilderHomePage = () => {
                   </Link>
                 )}
               </td>
+              <td className="border p-5">
+                {selectedProcessor.length > 0 ? selectedProcessor[0].price : 0}
+              </td>
             </tr>
 
             <tr>
@@ -104,6 +64,30 @@ const PcBuilderHomePage = () => {
                     Select
                   </Link>
                 )}
+              </td>
+              <td className="border p-5">
+                {selectedMotherboards.length > 0
+                  ? selectedMotherboards[0].price
+                  : 0}
+              </td>
+            </tr>
+
+            <tr>
+              <td className="border p-5">RAM</td>
+              <td className="border p-5">
+                {selectedRAM.length > 0 ? (
+                  <p>{selectedRAM[0].productName}</p>
+                ) : (
+                  <Link
+                    className="btn btn-accent"
+                    href="/pcBuilder/builderRam"
+                  >
+                    Select
+                  </Link>
+                )}
+              </td>
+              <td className="border p-5">
+                {selectedRAM.length > 0 ? selectedRAM[0].price : 0}
               </td>
             </tr>
           </tbody>

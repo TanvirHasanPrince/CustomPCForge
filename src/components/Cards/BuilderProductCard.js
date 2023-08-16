@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 
 const BuilderProductCard = ({ product }) => {
-  const { image, productName, category, status, individualRating } = product;
+  const { image, productName, category, status, individualRating, price } = product;
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -35,7 +35,7 @@ const BuilderProductCard = ({ product }) => {
         <div className="p-5 text-center space-y-1">
           <p>Product Name: {productName}</p>
           <p>Category: {category}</p>
-          <p>Price: 8,799</p> {/* Replace with actual product price */}
+          <p>Price: {price}</p> {/* Replace with actual product price */}
           <p>Status: {status}</p>
           <p>Rating: {individualRating}</p>
         </div>

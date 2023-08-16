@@ -3,8 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   processors: [],
+  processorsPrice: 0,
   motherboards: [],
-  total: 0,
+  motherboardPrice: 0,
+  ram:[],
+  ramPrice:0
 };
 
 const buildPcSlice = createSlice({
@@ -16,8 +19,13 @@ const buildPcSlice = createSlice({
       const productCategory = productData.category.toLowerCase();
       if (productCategory === "processors") {
         state.processors.push({ ...productData });
+        state.processorsPrice = state.processorsPrice + productData.price;
       } else if (productCategory === "motherboards") {
         state.motherboards.push({ ...productData });
+        state.motherboardPrice = state.motherboardPrice + productData.price;
+      } else if (productCategory === "ram") {
+        state.ram.push({ ...productData });
+        state.ramPrice = state.ramPrice + productData.price;
       }
     },
   },
