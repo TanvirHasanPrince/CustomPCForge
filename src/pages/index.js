@@ -28,7 +28,9 @@ HomePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch(`${process.env.MY_SERVER}/products`);
+    const res = await fetch(
+      `https://custom-pc-forge-server.vercel.app/products`
+    );
     const data = await res.json();
 
     console.log("Fetched data:", data); // Log fetched data to check its structure
