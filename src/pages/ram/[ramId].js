@@ -1,6 +1,6 @@
-import DetailsProductCard from '@/components/Cards/DetailsProductCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import DetailsProductCard from "@/components/Cards/DetailsProductCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const SingleRamPage = ({ singleRam }) => {
   return (
@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) => {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/ram/${params.ramId}`
+    `https://custom-pc-forge-server.vercel.app/ram/${params.ramId}`
   );
   const data = await res.json();
 

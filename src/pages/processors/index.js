@@ -1,6 +1,6 @@
-import FeaturedProductsCard from '@/components/Cards/FeaturedProductsCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import FeaturedProductsCard from "@/components/Cards/FeaturedProductsCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const ProcessorHomePage = ({ allProcessors }) => {
   return (
@@ -19,16 +19,13 @@ const ProcessorHomePage = ({ allProcessors }) => {
 
 export default ProcessorHomePage;
 
-
 ProcessorHomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-
 export const getServerSideProps = async () => {
-
   const res = await fetch(
-    `http://localhost:5000/products/processors`
+    `https://custom-pc-forge-server.vercel.app/products/processors`
   );
   const data = await res.json();
 

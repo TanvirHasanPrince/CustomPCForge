@@ -1,6 +1,6 @@
-import BuilderProductCard from '@/components/Cards/BuilderProductCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import BuilderProductCard from "@/components/Cards/BuilderProductCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const BuilderRamPage = ({ allRam }) => {
   return (
@@ -19,14 +19,14 @@ const BuilderRamPage = ({ allRam }) => {
 
 export default BuilderRamPage;
 
-
-
 BuilderRamPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:5000/products/ram`);
+  const res = await fetch(
+    `https://custom-pc-forge-server.vercel.app/products/ram`
+  );
   const data = await res.json();
 
   return {

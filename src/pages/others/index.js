@@ -1,6 +1,6 @@
-import FeaturedProductsCard from '@/components/Cards/FeaturedProductsCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import FeaturedProductsCard from "@/components/Cards/FeaturedProductsCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const OthersHomePage = ({ allOthers }) => {
   return (
@@ -24,13 +24,14 @@ OthersHomePage.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:5000/products/others`);
+  const res = await fetch(
+    `https://custom-pc-forge-server.vercel.app/products/others`
+  );
   const data = await res.json();
 
   return {
     props: {
       allOthers: data.data,
     },
-
   };
 };

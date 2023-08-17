@@ -1,6 +1,6 @@
-import FeaturedProductsCard from '@/components/Cards/FeaturedProductsCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import FeaturedProductsCard from "@/components/Cards/FeaturedProductsCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const HDDHomePage = ({ allHdd }) => {
   return (
@@ -24,7 +24,9 @@ HDDHomePage.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:5000/products/hdd`);
+  const res = await fetch(
+    `https://custom-pc-forge-server.vercel.app/products/hdd`
+  );
   const data = await res.json();
 
   return {

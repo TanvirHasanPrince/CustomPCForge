@@ -3,11 +3,8 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import React from "react";
 
 const SingleProcessorsPage = ({ singleProcessor }) => {
-
-
   return (
     <div>
-
       <DetailsProductCard product={singleProcessor}></DetailsProductCard>
     </div>
   );
@@ -20,10 +17,11 @@ SingleProcessorsPage.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps = async (context) => {
-
   const { params } = context;
 
-  const res = await fetch(`http://localhost:5000/processors/${params.processorsId}`);
+  const res = await fetch(
+    `https://custom-pc-forge-server.vercel.app/processors/${params.processorsId}`
+  );
   const data = await res.json();
 
   return {

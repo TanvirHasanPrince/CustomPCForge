@@ -28,7 +28,7 @@ HomePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("http://localhost:5000/products");
+    const res = await fetch(`${process.env.MY_SERVER}/products`);
     const data = await res.json();
 
     console.log("Fetched data:", data); // Log fetched data to check its structure

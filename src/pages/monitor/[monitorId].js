@@ -1,6 +1,6 @@
-import DetailsProductCard from '@/components/Cards/DetailsProductCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import DetailsProductCard from "@/components/Cards/DetailsProductCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const SingleMonitorPage = ({ singleMonitor }) => {
   return (
@@ -19,7 +19,7 @@ SingleMonitorPage.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/monitor/${params.monitorId}`
+    `https://custom-pc-forge-server.vercel.app/monitor/${params.monitorId}`
   );
   const data = await res.json();
 

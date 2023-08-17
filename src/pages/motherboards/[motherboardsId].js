@@ -19,7 +19,7 @@ SingleMotherBoardPage.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/motherboards/${params.motherboardsId}`
+    `https://custom-pc-forge-server.vercel.app/motherboards/${params.motherboardsId}`
   );
   const data = await res.json();
 

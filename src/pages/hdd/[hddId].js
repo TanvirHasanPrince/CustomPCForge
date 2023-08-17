@@ -1,6 +1,6 @@
-import DetailsProductCard from '@/components/Cards/DetailsProductCard';
-import RootLayout from '@/components/Layouts/RootLayout';
-import React from 'react';
+import DetailsProductCard from "@/components/Cards/DetailsProductCard";
+import RootLayout from "@/components/Layouts/RootLayout";
+import React from "react";
 
 const SingleHddPage = ({ singleHdd }) => {
   return (
@@ -19,7 +19,7 @@ SingleHddPage.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/hdd/${params.hddId}`
+    `https://custom-pc-forge-server.vercel.app/hdd/${params.hddId}`
   );
   const data = await res.json();
 
