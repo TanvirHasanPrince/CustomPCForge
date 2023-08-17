@@ -12,10 +12,6 @@ Welcome to the PC Builder website repository! This is a web application built us
     - [Product Detail Page (SSG implementation)](#product-detail-page-ssg-implementation)
     - [PC Builder Page (SSR implementation)](#pc-builder-page-ssr-implementation)
   - [Tech Stack](#tech-stack)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-  - [Usage](#usage)
   - [Server](#server)
   - [Live Website](#live-website)
   - [Contributing](#contributing)
@@ -52,21 +48,6 @@ Welcome to the PC Builder website repository! This is a web application built us
 - HTML
 - CSS (with Tailwind CSS)
 - JavaScript
-
-## Getting Started
-
-### Prerequisites
-- Node.js (version X.X.X)
-- npm or yarn
-
-### Installation
-1. Clone this repository: `git clone https://github.com/yourusername/pc-builder.git`
-2. Navigate to the project directory: `cd pc-builder`
-3. Install dependencies: `npm install` or `yarn install`
-
-## Usage
-1. Run the development server: `npm run dev` or `yarn dev`
-2. Access the application in your web browser: `http://localhost:3000`
 
 
 ## Server
