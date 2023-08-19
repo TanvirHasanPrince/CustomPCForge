@@ -48,7 +48,7 @@ Welcome to the PC Builder website repository! This is a web application built us
 - HTML
 - CSS (with Tailwind CSS)
 - JavaScript
-
+- Redux - Toolkit
 
 ## Server
 
