@@ -35,6 +35,7 @@ const PcBuilderHomePage = () => {
 
   return (
     <div className="text-center">
+      <span>If you face any server error, please wait few seconds and try again</span>
       <div className="flex items-center justify-center py-10 my-5">
         <table className="table-auto border-collapse">
           <thead>
