@@ -16,8 +16,8 @@ const FeaturedProductsCard = ({ product }) => {
           <Image
             src={image}
             alt=""
-            width={240}
-            height={240}
+            width={340}
+            height={340}
             layout="responsive"
             className="rounded-lg transform hover:scale-110 transition duration-300"
           />
